@@ -93,6 +93,17 @@ const technologiesDispatcher = new TechnologiesDispatcher()
 const initSurveyForm = (formId) => {
   const form = document.getElementById(formId)
 
+  form.onsubmit = (e) => {
+    e.preventDefault()
+
+    const formData = new FormData(form)
+    for (const entry of formData.entries()) {
+      console.log(entry[0], entry[1])
+    }
+
+    alert('Thank you for submitting! Please check your console to see the submitted data.')
+  }
+
   // Developer Roles
   const developerRolesSelect = form.querySelector('#dropdown')
   developerRolesDispatcher.addSubscriber(developerRolesSelect)
@@ -118,10 +129,13 @@ const initSurveyForm = (formId) => {
   seniorityElem.addEventListener(SENIORITY_TITLES_FETCHED, (e) => {
     seniorityElem.innerHTML = ''
     const explanation = document.createElement('p')
-    explanation.textContent = 'What is your current level?'
+    explanation.textContent = 'What is your seniority current level?'
     seniorityElem.appendChild(explanation)
+    const container = document.createElement('div')
+    container.className = 'survey-form__button-group'
     e.detail.titles.forEach(title => {
       const div = document.createElement('div')
+      div.className = 'survey-form__button-group__button'
       const label = document.createElement('label')
       label.setAttribute('for', title)
       label.textContent = title
@@ -131,8 +145,9 @@ const initSurveyForm = (formId) => {
       radioButton.setAttribute('value', title)
       div.appendChild(radioButton)
       div.appendChild(label)
-      seniorityElem.appendChild(div)
+      container.appendChild(div)
     })
+    seniorityElem.appendChild(container)
   })
 
   // Technologies
@@ -143,8 +158,11 @@ const initSurveyForm = (formId) => {
     const explanation = document.createElement('p')
     explanation.textContent = 'What do you work with? (Check all that apply)'
     seniorityElem.appendChild(explanation)
+    const container = document.createElement('div')
+    container.className = 'survey-form__button-group'
     e.detail.technologies.forEach(tech => {
       const div = document.createElement('div')
+      div.className = 'survey-form__button-group__button'
       const label = document.createElement('label')
       label.setAttribute('for', tech)
       label.textContent = tech
@@ -154,8 +172,9 @@ const initSurveyForm = (formId) => {
       checkbox.setAttribute('value', tech)
       div.appendChild(checkbox)
       div.appendChild(label)
-      technologiesElem.appendChild(div)
+      container.appendChild(div)
     })
+    technologiesElem.appendChild(container)
   })
 }
 

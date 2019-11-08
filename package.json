@@ -38,7 +38,10 @@
   "standard": {
     "parser": "babel-eslint",
     "globals": [
-      "fetch", "CustomEvent"
+      "fetch",
+      "CustomEvent",
+      "FormData",
+      "alert"
     ]
   }
 }

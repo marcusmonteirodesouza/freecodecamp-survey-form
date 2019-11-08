@@ -2,3 +2,48 @@ body,
 html {
   font-family: "Roboto", sans-serif;
 }
+
+.survey-form {
+  color: #ffffff;
+  max-width: 50%;
+  margin: auto;
+}
+
+.survey-form__header {
+  background-color: #26418f;
+  text-align: center;
+}
+
+.survey-form__content {
+  background-color: #5c6bc0;
+}
+
+.survey-form__field * {
+  display: block;
+  box-sizing: border-box;
+}
+
+.survey-form__field:not(:first-child) {
+  margin-top: 1em;
+}
+
+.survey-form__input-not-button {
+  width: 100%;
+}
+
+.survey-form__button-group * {
+  display: inline-flex;
+  margin-left: 0.5em;
+}
+
+.survey-form__button-group__button:not(:first-child) {
+  margin-left: 0.6em;
+}
+
+.survey-form__submit-button-container {
+  text-align: center;
+}
+.survey-form__field--submit-button {
+  background-color: #ff6090;
+  width: 100%;
+}

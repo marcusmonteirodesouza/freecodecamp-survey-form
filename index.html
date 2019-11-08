@@ -18,17 +18,20 @@
   </head>
   <body>
     <main>
-      <header>
-        <h1 id="title">Developer Profile Survey</h1>
-        <p id="description">
-          What does your profile look like?
-        </p>
-      </header>
-      <section>
-        <form id="survey-form">
-          <div>
+      <section class="survey-form">
+        <div class="survey-form__header">
+          <h1 class="survey-form__title" id="title">
+            Developer Profile Survey
+          </h1>
+          <p class="survey-form__explanation" id="description">
+            What does your Software Development profile looks like?
+          </p>
+        </div>
+        <form class="survey-form__content" id="survey-form">
+          <div class="survey-form__field">
             <label id="name-label" for="name">Name</label>
             <input
+              class="survey-form__input-not-button"
               id="name"
               type="text"
               name="name"
@@ -38,9 +41,10 @@
               required
             />
           </div>
-          <div>
+          <div class="survey-form__field">
             <label id="email-label" for="email">Email</label>
             <input
+              class="survey-form__input-not-button"
               id="email"
               type="email"
               name="email"
@@ -48,9 +52,10 @@
               required
             />
           </div>
-          <div>
+          <div class="survey-form__field">
             <label id="number-label" for="age">Age(optional)</label>
             <input
+              class="survey-form__input-not-button"
               id="number"
               type="number"
               name="age"
@@ -59,22 +64,28 @@
               placeholder="Age"
             />
           </div>
-          <div>
+          <div class="survey-form__field">
             <label for="role">Current Role</label>
-            <select id="dropdown" name="role" required>
-            </select>
+            <select id="dropdown" name="role" required> </select>
           </div>
-          <div id="seniority"></div>
-          <div id="technologies"></div>
-          <div>
+          <div class="survey-form__field" id="seniority"></div>
+          <div class="survey-form__field" id="technologies"></div>
+          <div class="survey-form__field">
             <label for="description">Job Description</label>
             <textarea
+              class="survey-form__input-not-button"
               name="description"
               placeholder="What do you do?"
             ></textarea>
           </div>
-          <div>
-              <button id="submit" type="submit">Submit</button> 
+          <div class="survey-form__submit-button-container">
+            <button
+              class="survey-form__field--submit-button"
+              id="submit"
+              type="submit"
+            >
+              Submit
+            </button>
           </div>
         </form>
       </section>
