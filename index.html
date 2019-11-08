@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <title>FreeCodeCamp - Survey Form</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      rel="stylesheet"
+    />
+    <link href="./index.css" rel="stylesheet" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1 id="title">Developer Profile Survey</h1>
+        <p id="description">
+          What does your profile look like?
+        </p>
+      </header>
+      <section>
+        <form id="survey-form">
+          <div>
+            <label id="name-label" for="name">Name</label>
+            <input
+              id="name"
+              type="text"
+              name="name"
+              maxlength="40"
+              size="40"
+              placeholder="Enter you name"
+              required
+            />
+          </div>
+          <div>
+            <label id="email-label" for="email">Email</label>
+            <input
+              id="email"
+              type="email"
+              name="email"
+              placeholder="Enter you email"
+              required
+            />
+          </div>
+          <div>
+            <label id="number-label" for="age">Age(optional)</label>
+            <input
+              id="number"
+              type="number"
+              name="age"
+              min="5"
+              max="120"
+              placeholder="Age"
+            />
+          </div>
+          <div>
+            <label for="role">Current Role</label>
+            <select id="dropdown" name="role" required>
+            </select>
+          </div>
+          <div id="seniority"></div>
+          <div id="technologies"></div>
+          <div>
+            <label for="description">Job Description</label>
+            <textarea
+              name="description"
+              placeholder="What do you do?"
+            ></textarea>
+          </div>
+          <div>
+              <button id="submit" type="submit">Submit</button> 
+          </div>
+        </form>
+      </section>
+    </main>
+    <script src="./index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+{
+  "name": "freecode-camp-survey-form",
+  "version": "1.0.0",
+  "description": "My solution for FreeCodeCamp's Build a Survey Form challenge",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write ./**/*.{html,json,css,scss,md}",
+    "lint": "standard --fix",
+    "start": "serve"
+  },
+  "keywords": [
+    "freecodecamp"
+  ],
+  "author": "Marcus Vinicius Monteiro de Souza",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-eslint": "^10.0.3",
+    "husky": "^3.0.9",
+    "lint-staged": "^9.4.2",
+    "prettier": "^1.18.2",
+    "standard": "^14.3.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "./**/*.{html,json,css,scss,md}": [
+      "prettier --write",
+      "git add"
+    ],
+    "./**/*.{js}": [
+      "standard --fix",
+      "git add"
+    ]
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "globals": [
+      "fetch", "CustomEvent"
+    ]
+  }
+}
